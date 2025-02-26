@@ -84,3 +84,53 @@ Route::post('/listaex4', function(Request $request){
    $media = ($valor1 * $valor2);
    return view('lista.ex4', compact('media'));
 });
+
+#Exercídio 5
+
+Route::get('/ex5', function (){
+    return view('lista.ex5');
+});
+
+Route::post('/listaex5', function(Request $request){
+    $valor1 = intval($request->input('raio'));
+    $area = pi() * pow($valor1, 2);
+    return view('lista.ex5', compact('area'));
+});
+
+#Exercício 6
+
+Route::get('/ex6', function(){
+    return view('lista.ex6');
+});
+
+Route::post('/listaex6',function(Request $request){
+    $base = intval($request->input('base'));
+    $altura = intval($request->input('altura'));
+    $perimetro = ($base + $altura) * 2;
+    return view('lista.ex6', compact('perimetro'));
+});
+
+#Exercício 7
+
+Route::get('/ex7', function (){
+    return view('lista.ex7');
+});
+
+Route::post('/listaex7', function(Request $request){
+    $valor1 = intval($request->input('raio'));
+    $perimetro = (2 * (pi())) * $valor1;
+    return view('lista.ex7', compact('perimetro'));
+});
+
+#Exercício 8
+
+Route::get('/ex8', function(){
+    return view('lista.ex8');
+});
+
+Route::post('/listaex8',function(Request $request){
+    $base = intval($request->input('base'));
+    $expoente = intval($request->input('expoente'));
+    $calculo = pow($base, $expoente);
+    return view('lista.ex8', compact('calculo'));
+});
