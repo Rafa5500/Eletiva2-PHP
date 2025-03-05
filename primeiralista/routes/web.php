@@ -134,3 +134,112 @@ Route::post('/listaex8',function(Request $request){
     $calculo = pow($base, $expoente);
     return view('lista.ex8', compact('calculo'));
 });
+
+#exercicio 9
+Route::get('/ex9', function(){ 
+    return view('lista.ex9');
+});
+
+Route::post('/listaex9', function(Request $request){ 
+
+    $metros = floatval($request -> input('metros'));
+    $centimetros = $metros * 100;
+    
+
+    return view('lista.ex9', compact('centimetros')); 
+});
+
+#exercicio 10
+Route::get('/ex10', function(){ 
+    return view('lista.ex10');
+});
+
+Route::post('/listaex10', function(Request $request){ 
+
+    $quilometros = floatval($request -> input('quilometros'));
+    $milhas = $quilometros * 0.621371;
+
+    return view('lista.ex10', compact('milhas')); 
+});
+
+#exercicio 11
+Route::get('/ex11', function(){ 
+    return view('lista.ex11');
+});
+
+Route::post('/listaex11', function(Request $request){ 
+
+    $peso = floatval($request -> input('peso'));
+    $altura = floatval($request -> input('altura'));
+    $imc = $peso / ($altura * $altura);
+    
+
+    return view('lista.ex11', compact('imc')); 
+});
+
+#exercicio 12
+Route::get('/ex12', function(){ 
+    return view('lista.ex12');
+});
+
+Route::post('/listaex12', function(Request $request){ 
+
+    $preco = floatval($request -> input('preco'));
+    $desconto = floatval($request -> input('desconto'));
+    $preco_com_desconto = $preco * (1 - $desconto / 100);
+
+    
+
+    return view('lista.ex12', compact('preco_com_desconto')); 
+});
+
+#exercicio 13
+Route::get('/ex13', function(){ 
+    return view('lista.ex13');
+});
+
+Route::post('/listaex13', function(Request $request){ 
+
+    $capital = floatval($request -> input('capital'));
+    $taxa = floatval($request -> input('taxa'));
+    $periodo = floatval($request -> input('periodo'));
+    $juros_simples = $capital * ($taxa / 100) * $periodo;
+
+
+    return view('lista.ex13', compact('juros_simples')); 
+});
+
+#exercicio 14
+Route::get('/ex14', function(){ 
+    return view('lista.ex14');
+});
+
+Route::post('/listaex14', function(Request $request){ 
+
+    $capital = floatval($request -> input('capital'));
+    $taxa = floatval($request -> input('taxa'));
+    $periodo = floatval($request -> input('periodo'));
+    $montante = $capital + ($capital * ($taxa / 100) * $periodo);
+
+
+    return view('lista.ex14', compact('montante')); 
+});
+
+#exercicio 15
+Route::get('/ex15', function(){ 
+    return view('lista.ex15');
+});
+
+Route::post('/listaex15', function(Request $request){ 
+
+    $dias = floatval($request -> input('dias'));
+    $horas = $dias * 24;
+    $minutos = $dias * 24 * 60;
+    $segundos = $dias * 24 * 60 * 60;
+    $resultado = "{$horas} horas, {$minutos} minutos, {$segundos} segundos";
+
+
+
+
+    return view('lista.ex15', compact('resultado')); 
+});
